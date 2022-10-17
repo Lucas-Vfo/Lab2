@@ -1,0 +1,187 @@
+
+*,*::after,*::before {
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    background: rgb(193,189,181);
+background: radial-gradient(circle, rgba(193,189,181,1) 0%, rgba(224,216,194,1) 52%, rgba(193,189,181,1) 100%);
+    font-size: 2.6rem;
+    margin: 0;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Hero */
+
+.hero {
+    width: 100%;
+    align-items: center center;
+    background-image: url('../img/hero.png');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+.hero h1 {
+    font-weight: 700;
+    line-height: 1;
+}
+
+.hero p{
+    font-weight: 500;
+    font-size: 30px;
+    padding: 1em 0;
+}
+
+.hero a {
+    font-weight: 700;
+    font-size: 20px;
+    padding: 0.3em 1em;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Selector */
+.selector {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: linear-gradient(rgba(0,0,0, .9), rgba(0,0,0, .9));
+}
+
+#prueba1 {
+    position: relative;
+    font-family: Arial;
+    background-color:#fff;
+    box-shadow: 0px 0px 0px rgba(0,0,0, .16);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .2s ease all;
+    position: relative;
+    z-index: 200;
+    border: 2px solid transparent;
+}
+
+#prueba2 {
+    position: relative;
+    font-family: Arial;
+    background-color:#fff;
+    box-shadow: 0px 0px 0px rgba(0,0,0, .16);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .2s ease all;
+    position: relative;
+    z-index: 200;
+    border: 2px solid transparent;
+}
+
+/* Nombres de los Freestylers */
+#mostrar1 {
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+#mostrar1 h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #333;
+}
+
+#mostrar1 ol, li{
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+#mostrar2 {
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+#mostrar2 h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #333;
+}
+
+#mostrar2 ol, li{
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+}
+
+/* Mcs */
+
+#mc1 {
+    margin-bottom: 10px;
+}
+
+#mc2 {
+    margin-bottom: 10px;
+}
+
+/* Tablas */
+
+#tabla{
+   width: 100%;
+   border-collapse: collapse;
+}
+
+#tabla td, #tabla th {
+    padding: 12px 15px;
+    border: 1px solid black;;
+    text-align: center;
+    font-size: 16px;
+}
+
+.patr {
+    background-color: black;
+    color: #ddd;
+}
+
+#tabla th {
+    background-color: #ddd;
+}
+
+#tabla tbody td {
+    background-color: #f5f5f5;
+}
+
+
+/* Tabla 1 */
+
+.round1{
+    text-align: center;
+    text-emphasis-color: black;
+    padding-top: 75px;
+}
+
+.tabla1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 100px;
+}
+
+
