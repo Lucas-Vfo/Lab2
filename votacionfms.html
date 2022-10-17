@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votación FMS</title>
+    <link type="image/png" sizes="96x96" rel="icon" href="img/logo-fms.png">
+    <meta name="description" content="Pagina web de Votación FMS">
+
+    <!-- Prefetch -->
+    <link rel="prefetch" href="votacionfms.html" as="document">
+
+    <!-- Preload -->
+    <!-- Se toma en cuenta el normalize como preferencia al tener estilos que tienen una gran aplicación en todas hojas -->
+    <!-- <link rel="preload" href="css/normalize.css" as="style"> 
+    <link rel="stylesheet" href="css/normalize.css"> -->
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    
+</head>
+
+<body>
+    <section class="hero">
+        <div class="container px-4 py-5">
+            <div class="row align-items-center g-5 py-5">
+              
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="img/logo-fms.png" class="d-block mx-lg-auto img-fluid" width="250" height="300" loading="lazy">
+                </div>
+                
+                <div class="col-sm-4 col-lg-6">
+                    <h1 class="text-light display-5 fw-bold mb-3">Votación FMS</h1>
+                    <p class="text-light lead">Sistema de votación Oficial</p>
+                    <a href="#mc1" class="hero-btn btn-secondary">Vota Ya!</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="row d-flex flex-column">
+        <h2 class="round1">Busca a tus Freestylers favoritos</h2>
+    </div>
+
+    <div class="selector d-flex justify-content-around">
+
+        <select aria-label="Default select example" name="json" id="prueba1">
+            <option selected>Selecione el pais del MC</option>
+            <option value="argentina">Argentina</option>
+            <option value="chile">Chile</option>
+            <option value="espana">España</option>
+            <option value="mexico">Mexico</option>
+        </select>
+
+        <select name="json" aria-label="Default select example" id="prueba2">
+            <option selected>Selecione el pais del MC</option>
+            <option value="argentina">Argentina</option>
+            <option value="chile">Chile</option>
+            <option value="espana">España</option>
+            <option value="mexico">Mexico</option>
+        </select>
+    </div>
+    
+    <div class="contenedor-mcs d-flex justify-content-around">
+        <div id='mostrar1'></div>
+        <div id='mostrar2'></div>
+    </div>
+    
+    <div class="nombresMcs d-flex justify-content-around">
+        <div class="row d-flex flex-column">
+            <input type="text" id="mc1">
+            <button class="btn btn-outline-dark" onclick="agregarNombre()">Seleccionar</button>
+        </div>
+        <div class="row d-flex flex-column">
+            <input type="text" id="mc2">
+            <button class="btn btn-outline-dark" onclick="agregarNombre()">Seleccionar</button>
+        </div>
+    </div>
+
+    <div class="row d-flex flex-column">
+        <h2 class="round1">Easy Mode - Palabra 10 segundos</h2>
+    </div>
+    <div class="tabla1 d-flex justify-center">
+        <div>
+            <table id="tabla">
+                <tr>
+                    <th>MC's</th>
+                    <th id="patr" colspan="6" style="color: #ddd; background-color: black;">Patrones</th>
+                    <th>Escena</th>
+                    <th>Flow</th>
+                    <th>Skills</th>
+                    <th>Total</th>
+                </tr>
+
+                <tr>
+                    <td id="part1">MC1</td>
+                    <td><input id="num11" type="number" min="0" max="4"></td>
+                    <td><input id="num12" type="number" min="0" max="4"></td>
+                    <td><input id="num13" type="number" min="0" max="4"></td>
+                    <td><input id="num14" type="number" min="0" max="4"></td>
+                    <td><input id="num15" type="number" min="0" max="4"></td>
+                    <td><input id="num16" type="number" min="0" max="4"></td>
+                    <td><input id="num17" type="number" min="0" max="2"></td>
+                    <td><input id="num18" type="number" min="0" max="2"></td>
+                    <td><input id="num19" type="number" min="0" max="2"></td>
+                    <td id="result1"></td>
+                </tr>
+
+                <tr>
+                    <td id="part2">MC2</td>
+                    <td><input id="num21" type="number" min="0" max="4"></td>
+                    <td><input id="num22" type="number" min="0" max="4"></td>
+                    <td><input id="num23" type="number" min="0" max="4"></td>
+                    <td><input id="num24" type="number" min="0" max="4"></td>
+                    <td><input id="num25" type="number" min="0" max="4"></td>
+                    <td><input id="num26" type="number" min="0" max="4"></td>
+                    <td><input id="num27" type="number" min="0" max="2"></td>
+                    <td><input id="num28" type="number" min="0" max="2"></td>
+                    <td><input id="num29" type="number" min="0" max="2"></td>
+                    <td id="result2"></td>
+                </tr>
+            </table> 
+        </div>
+    </div>
+
+    <div class="result d-flex justify-content-around">
+        <button class="btn btn-outline-dark" onclick="calcularResultado11()">Calcular</button>
+        <button class="btn btn-outline-dark" onclick="verGanador1()">Ver Ganador</button>
+        <div id='ganador1'></div>
+    </div>
+
+
+    <div class="row d-flex flex-column">
+        <h2 class="round1">Tematicas - Primera vuelta</h2>
+    </div>
+    <div class="tabla1 d-flex justify-center">
+        <div>
+            <table id="tabla">
+                <tr>
+                    <th>MC's</th>
+                    <th id="patr" colspan="4" style="color: #ddd; background-color: black;">Patrones</th>
+                    <th>Escena</th>
+                    <th>Flow</th>
+                    <th>Skills</th>
+                    <th>Total</th>
+                </tr>
+
+                <tr>
+                    <td id="part1">MC1</td>
+                    <td><input id="num31" type="number" min="0" max="4"></td>
+                    <td><input id="num32" type="number" min="0" max="4"></td>
+                    <td><input id="num33" type="number" min="0" max="4"></td>
+                    <td><input id="num34" type="number" min="0" max="2"></td>
+                    <td><input id="num35" type="number" min="0" max="4"></td>
+                    <td><input id="num36" type="number" min="0" max="2"></td>
+                    <td><input id="num37" type="number" min="0" max="2"></td>
+                    <td id="result3"></td>
+                </tr>
+
+                <tr>
+                    <td id="part2">MC2</td>
+                    <td><input id="num41" type="number" min="0" max="4"></td>
+                    <td><input id="num42" type="number" min="0" max="4"></td>
+                    <td><input id="num43" type="number" min="0" max="4"></td>
+                    <td><input id="num44" type="number" min="0" max="4"></td>
+                    <td><input id="num45" type="number" min="0" max="2"></td>
+                    <td><input id="num46" type="number" min="0" max="2"></td>
+                    <td><input id="num47" type="number" min="0" max="2"></td>
+                    <td id="result4"></td>
+                </tr>
+            </table> 
+        </div>
+    </div>
+
+    <div class="result d-flex justify-content-around">
+        <button class="btn btn-outline-dark" onclick="calcularResultado12()">Calcular</button>
+        <button class="btn btn-outline-dark" onclick="verGanador1()">Ver Ganador</button>
+        <div id='ganador2'></div>
+    </div>
+
+
+    <script type="text/javascript" src="js/cargajson.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
